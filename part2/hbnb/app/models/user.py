@@ -18,13 +18,42 @@ class User(BaseModel):
     
     @property
     def first_name(self):
-        return self._first_name
+        return self.first_name
 
     @first_name.setter
     def first_name(self, value):
-        if not isinstance(value, str):
-            raise ValueError("Your name cannot include numbers, only letters")
-        self._first_name = value
+        if not value or len(value) > 50:
+            raise ValueError("First name is required and cannot exceed 50 characters")
+        self.first_name = value
+
+    @property
+    def last_name(self):
+        return self.last_name
+    
+    @first_name.setter
+    def first_name(self, value):
+        if not value or len(value) > 50:
+            raise ValueError("Last name is required and cannot exceed 50 characters")
+        self.first_name = value
+    
+    @property
+    def email(self):
+        return self._email
+
+    @email.setter
+    def email(self, value):
+        if not value:
+            raise ValueError("Email is required")
+        try:
+            validate_email(value)
+            self.email = value
+        except EmailNotValidError:
+            raise EmailNotValidError
+    
+
+    
+
+
 
 
 
