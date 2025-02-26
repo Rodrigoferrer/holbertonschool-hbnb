@@ -49,14 +49,3 @@ class User(BaseModel):
             self.email = value
         except EmailNotValidError:
             raise EmailNotValidError
-    
-
-    
-
-
-
-
-
-
-
-    
