@@ -20,10 +20,10 @@ class Amenity(BaseModel):
 
     @property
     def name(self):
-        return self.name
+        return self._name
 
     @name.setter
     def name(self, value):
         if not value or len(value) > 50:
             raise ValueError("Name is required and cannot exceed 50 characters")
-        self.name = value
+        self._name = value

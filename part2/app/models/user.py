@@ -42,7 +42,7 @@ def email(self):
     return self._email
 
 @email.setter
-def email(self, value):  # Asegurar que `value` está definido como argumento
+def email(self, value):
     if not value:
         raise ValueError("Email is required")
     try:

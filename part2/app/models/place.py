@@ -8,7 +8,7 @@ from .user import User
 class Place(BaseModel):
     """Class Place, inherits from BaseModel"""
 
-    def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: str, description = None):
+    def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: User, description=None):      
         BaseModel.__init__(self)
         self.title = title
         self.description = description
@@ -21,64 +21,68 @@ class Place(BaseModel):
 
     @property
     def title(self):
-        return self.title
+        return self._title
     
     @title.setter
     def title(self, value):
         if not value or len(value) > 100:
             raise ValueError("Title is required and cannot exceed 100 characters")
+        self._title = value
 
     @property
     def description(self):
-        return self.description
+        return self._description
     
     @description.setter
-    def description_set(self, value):
+    def description(self, value):
         if len(value) > 100:
-            raise ValueError("Title is required and cannot exceed 100 characters")
-    
+            raise ValueError("Description cannot exceed 100 characters")
+        self._description = value
+
     @property
     def price(self):
-        return self.price
+        return self._price
     
     @price.setter
-    def price_set(self, value):
+    def price(self, value):
         if value < 0:
             raise ValueError("Price must be a positive number")
-    
+        self._price = value
+
     @property
     def latitude(self):
-        return self.latitude
+        return self._latitude
     
-    @price.setter
-    def latitude_set(self, value):
+    @latitude.setter
+    def latitude(self, value):
         if value < -90.0 or value > 90.0:
             raise ValueError("Must be within the range of -90.0 to 90.0.")
-    
+        self._latitude = value
+
     @property
     def longitude(self):
-        return self.longitude
+        return self._longitude
     
-    @price.setter
-    def longitude_set(self, value):
+    @longitude.setter
+    def longitude(self, value):  
         if value < -180.0 or value > 180.0:
             raise ValueError("Must be within the range of -180.0 to 180.0.")
-    
+        self._longitude = value
+
     @property
     def owner(self):
-        return self.owner
+        return self._owner
     
     @owner.setter
-    def owner_set(self, value):
+    def owner(self, value):  
         if not isinstance(value, User):
-            raise ValueError()
+            raise ValueError("Owner must be a User instance")
+        self._owner = value
     
     def add_review(self, review):
         """Add a review to the place."""
-        
         self.reviews.append(review)
 
     def add_amenity(self, amenity):
         """Add an amenity to the place."""
-        
         self.amenities.append(amenity)
