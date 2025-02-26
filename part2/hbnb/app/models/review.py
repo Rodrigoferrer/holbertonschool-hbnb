@@ -61,11 +61,3 @@ class Review(BaseModel):
         return user
 
     self.save()
-
-    def __str__(self):
-        """Devuelve una representación legible de la reseña."""
-        return f"Review(id={self.id}, text='{self.text}', rating={self.rating}, user={self.user.id}, place={self.place.id})"
-
-    def __repr__(self):
-        """Devuelve una representación en string que permite recrear la instancia."""
-        return f"Review(text={repr(self.text)}, rating={self.rating}, place={repr(self.place)}, user={repr(self.user)})"
