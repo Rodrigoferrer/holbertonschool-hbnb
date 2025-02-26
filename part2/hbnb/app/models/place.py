@@ -8,7 +8,7 @@ class Place(BaseModel, User):
     """Class Place, inherits from BaseModel"""
 
     def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: str, description = None):
-        super().__init__()
+        BaseModel.__init__(self)
         self.title = title
         self.description = description
         self.price = price
@@ -72,8 +72,6 @@ class Place(BaseModel, User):
         if not isinstance(value, User):
             raise ValueError()
     
-
-
     def add_review(self, review):
         """Add a review to the place."""
         
