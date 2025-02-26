@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Class Place"""
 
-from base import BaseModel
-from user import User
+from .base import BaseModel
+from .user import User
 
-class Place(BaseModel, User):
+
+class Place(BaseModel):
     """Class Place, inherits from BaseModel"""
 
     def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: str, description = None):
