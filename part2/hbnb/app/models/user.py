@@ -8,7 +8,7 @@ from email_validator import validate_email, EmailNotValidError
 class User(BaseModel):
     """Class User, inherits from BaseModel"""
     
-    def __init__(self, first_name, last_name, email, is_admin):
+    def __init__(self, first_name: str, last_name: str, email: str, is_admin: bool = False):
         super().__init__()
         self.first_name = first_name
         self.last_name = last_name
@@ -26,7 +26,7 @@ class User(BaseModel):
             raise ValueError("Your name cannot include numbers, only letters")
         self._first_name = value
 
-    
+
 
 
 
