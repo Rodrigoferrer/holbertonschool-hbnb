@@ -53,4 +53,4 @@ class UserList(Resource):
 
             user = facade.uptdate_user(user_id, user_data)
             if not user:
-                return []': 'User not found'], 404
+                return {'Error': "User not found"}
