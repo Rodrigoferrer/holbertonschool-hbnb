@@ -38,17 +38,6 @@ class HBnBFacade:
             user.email = new_info[email]
         return self.user_repo.update(user_id, new_info)
 
-        
-    
-
-        
-
-
-
-
-
-
-
     # Placeholder method for fetching a place by ID
     def get_place(self, place_id):
         # Logic will be implemented in later tasks
