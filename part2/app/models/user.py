@@ -37,16 +37,16 @@ class User(BaseModel):
             raise ValueError("Last name is required and cannot exceed 50 characters")
         self._last_name = value
     
-@property
-def email(self):
-    return self._email
+    @property
+    def email(self):
+        return self._email
 
-@email.setter
-def email(self, value):
-    if not value:
-        raise ValueError("Email is required")
-    try:
-        email_info = validate_email(value, check_deliverability=False)  
-        self._email = email_info.normalized
-    except EmailNotValidError as e:
-        raise ValueError(f"Invalid email: {e}")
+    @email.setter
+    def email(self, value):
+        if not value:
+            raise ValueError("Email is required")
+        try:
+            email_info = validate_email(value, check_deliverability=False)  
+            self._email = email_info.normalized
+        except EmailNotValidError as e:
+            raise ValueError(f"Invalid email: {e}")
