@@ -1,5 +1,7 @@
 from app.persistence.repository import InMemoryRepository
 from app.models.user import User
+from app.models.amenity import Amenity
+
 
 class HBnBFacade:
     def __init__(self):
@@ -41,20 +43,29 @@ class HBnBFacade:
 
     def create_amenity(self, amenity_data):
         """Crea un nuevo amenity."""
-        return self.repository.create_amenity(amenity_data)
+        amenity = Amenity(**amenity_data)
+        self.amenity_repo.add(amenity)
+        return amenity
 
     def get_amenity(self, amenity_id):
         """Obtiene un amenity por ID."""
-        return self.repository.get_amenity(amenity_id)
+        return self.amenity_repo.get(amenity_id)
 
     def get_all_amenities(self):
         """Obtiene todos los amenities."""
-        return self.repository.get_all_amenities()
+        return self.amenity_repo.get_all()
 
     def update_amenity(self, amenity_id, amenity_data):
         """Actualiza un amenity existente."""
-        return self.repository.update_amenity(amenity_id, amenity_data)
+        amenity = self.amenity_repo.get(amenity_id)
+        
+        if not amenity_id or not amenity_data:
+            return None
+        if 'name' in amenity_data:
+            amenity.name = amenity_data['name']
 
+        self.amenity_repo.update(amenity_id, amenity_data)
+        return amenity
     
     def create_place(self, place_data):
         # Placeholder for logic to create a place, including validation for price, latitude, and longitude
