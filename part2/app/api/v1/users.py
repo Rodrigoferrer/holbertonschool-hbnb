@@ -43,20 +43,19 @@ class UserList(Resource):
                 return {'error': 'User not found'}, 404
             return {'id': user.id, 'first_name': user.first_name, 'last_name': user.last_name, 'email': user.email}, 200
 
-        def put(self, user_id):
         @api.expect(user_model, validate=True)
         @api.response(200, 'User is successfully updated')
         @api.response(404, 'User not found')
         @api.response(400, 'Invalid input data')
-        
+    
         def put(self, user_id):
             """Update a User"""
-        data = api.payload
+            data = api.payload
 
-        user = facade.get_user(user_id)
-        if not user:
-            return {'error': "User not found"}, 404
+            user = facade.get_user(user_id)
+            if not user:
+                return {'error': "User not found"}, 404
 
-        user_updated = facade.update_user(user_id, data)
+            user_updated = facade.update_user(user_id, data)
 
-        return {'id': user_updated.id, 'first_name': user_updated.first_name, 'last_name': user_updated.last_name, 'email': user_updated.email}, 200
+            return {'id': user.id, 'first_name': user.first_name, 'last_name': user.last_name, 'email': user.email}, 200
