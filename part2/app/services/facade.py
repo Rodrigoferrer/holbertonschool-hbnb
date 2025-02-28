@@ -63,6 +63,10 @@ class HBnBFacade:
         self.amenity_repo.update(amenity_id, amenity_data)
         return amenity
     
+    def get(self, amenity_id):
+        """Get amenity details by ID"""
+        return self.amenity_repo(amenity_id)
+
     def create_place(self, place_data):
         # Placeholder for logic to create a place, including validation for price, latitude, and longitude
         pass
