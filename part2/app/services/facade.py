@@ -39,9 +39,30 @@ class HBnBFacade:
         self.user_repo.update(user_id, new_info)
         return user
 
+    class HBnBFacade:
+    def __init__(self, repository):
+        self.repository = repository  # Inyección de dependencia
+
+    def create_amenity(self, amenity_data):
+        """Crea un nuevo amenity."""
+        return self.repository.create_amenity(amenity_data)
+
+    def get_amenity(self, amenity_id):
+        """Obtiene un amenity por ID."""
+        return self.repository.get_amenity(amenity_id)
+
+    def get_all_amenities(self):
+        """Obtiene todos los amenities."""
+        return self.repository.get_all_amenities()
+
+    def update_amenity(self, amenity_id, amenity_data):
+        """Actualiza un amenity existente."""
+        return self.repository.update_amenity(amenity_id, amenity_data)
+
+    
     def create_place(self, place_data):
-    # Placeholder for logic to create a place, including validation for price, latitude, and longitude
-    pass
+        # Placeholder for logic to create a place, including validation for price, latitude, and longitude
+        pass
 
     def get_place(self, place_id):
         # Placeholder for logic to retrieve a place by ID, including associated owner and amenities
