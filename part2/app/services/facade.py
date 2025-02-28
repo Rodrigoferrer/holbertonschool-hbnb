@@ -39,10 +39,6 @@ class HBnBFacade:
         self.user_repo.update(user_id, new_info)
         return user
 
-    class HBnBFacade:
-    def __init__(self, repository):
-        self.repository = repository  # Inyección de dependencia
-
     def create_amenity(self, amenity_data):
         """Crea un nuevo amenity."""
         return self.repository.create_amenity(amenity_data)
