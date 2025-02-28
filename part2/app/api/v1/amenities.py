@@ -13,8 +13,6 @@ class AmenityList(Resource):
     @api.expect(amenity_model)
     @api.response(201, 'Amenity successfully created')
     @api.response(400, 'Invalid input data')
-    
-    
     def post(self):
         """Crear un nuevo amenity"""
         data = api.payload
@@ -22,13 +20,14 @@ class AmenityList(Resource):
         if not data or 'name' not in data:
             return {'message': 'Invalid input data'}, 400
         amenity = facade.create_amenity(data)
-        return amenity, 201
+        return {'id': amenity.id, 'name': amenity.name}, 201
 
     @api.response(200, 'List of amenities retrieved successfully')
     def get(self):
         """Retrieve a list of all amenities"""
-        # Placeholder for logic to return a list of all amenities
-        pass
+        amenity = facade.get_all_amenities()
+        return amenity, 200
+
 
 @api.route('/<amenity_id>')
 class AmenityResource(Resource):

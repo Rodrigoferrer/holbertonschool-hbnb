@@ -47,10 +47,6 @@ class HBnBFacade:
         self.amenity_repo.add(amenity)
         return amenity
 
-    def get_amenity(self, amenity_id):
-        """Obtiene un amenity por ID."""
-        return self.amenity_repo.get(amenity_id)
-
     def get_all_amenities(self):
         """Obtiene todos los amenities."""
         return self.amenity_repo.get_all()
