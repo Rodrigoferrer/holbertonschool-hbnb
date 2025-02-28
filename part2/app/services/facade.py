@@ -29,14 +29,15 @@ class HBnBFacade:
         if not user:
             return None
         if 'first_name' in new_info:
-            user.first_name = new_info[first_name]
+            user.first_name = new_info['first_name']
         if 'last_name' in new_info:
-            user.last_name = new_info[last_name]
+            user.last_name = new_info['last_name']
         if 'last_name' in new_info:
-            user.last_name = new_info[last_name]
+            user.last_name = new_info['last_name']
         if 'email' in new_info:
-            user.email = new_info[email]
-        return self.user_repo.update(user_id, new_info)
+            user.email = new_info['email']
+        self.user_repo.update(user_id, new_info)
+        return user
 
     # Placeholder method for fetching a place by ID
     def get_place(self, place_id):
