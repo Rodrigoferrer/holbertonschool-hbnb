@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Class User"""
 
+import uuid
 from app.models.base import BaseModel
 from email_validator import validate_email, EmailNotValidError
 
@@ -11,6 +12,7 @@ class User(BaseModel):
     
     def __init__(self, first_name: str, last_name: str, email: str, is_admin: bool = False):
         super().__init__()
+        self.id = str(uuid.uuid4())
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
