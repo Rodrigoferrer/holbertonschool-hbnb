@@ -66,6 +66,6 @@ El servidor se ejecutará por defecto en `http://127.0.0.1:5000/`.
 
 ## Authors
 
-@BruDosSant
-@Rodrigoferrer
-@feratholberton
+[@BruDosSant](https://github.com/BruDosSant)  
+[@Rodrigoferrer](https://github.com/Rodrigoferrer)  
+[@feratholberton](https://github.com/feratholberton)
