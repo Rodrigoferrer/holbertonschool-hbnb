@@ -18,6 +18,11 @@ El repositorio está organizado en los siguientes directorios y archivos princip
 
 - **tests/**: Contiene los casos de prueba automatizados para validar la funcionalidad del sistema.
 
+  - `test_review.py`: data validation para endpoints de clase review
+  - `test_user.py`: data validation para endpoints de clase user
+  - `test_place.py`: data validation para endpoints de clase place
+  - `test_amenities.py`: data validation para endpoints de clase amenities
+
 - **api/**: Implementación de la API RESTful para interactuar con el sistema.
 
   - `v1/`: Versión 1 de la API con controladores específicos.
