@@ -12,7 +12,7 @@ class Place(BaseModel):
     def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: User, description=None, amenities=None, reviews=None, place_id=None):
         """Constructor method"""      
         BaseModel.__init__(self)
-        self.id = place_id if place_id else str(uuid.uuid4())
+        self.place_id = place_id or str(uuid.uuid4())
         self.title = title
         self.description = description
         self.price = price
