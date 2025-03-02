@@ -8,7 +8,7 @@ from .user import User
 class Place(BaseModel):
     """Class Place, inherits from BaseModel"""
 
-    def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: User, description=None, amenities=None):      
+    def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: User, description=None, amenities=None, reviews=None):      
         BaseModel.__init__(self)
         self.title = title
         self.description = description
