@@ -2,7 +2,7 @@
 
 ## Descripción del Proyecto
 
-Este proyecto es un clon de AirBnB desarrollado como parte del programa de Holberton School. El objetivo es construir un sistema escalable que permita la gestión de usuarios, reseñas, lugares y amenities, utilizando una arquitectura bien definida y aplicando principios de diseño de software.
+Este proyecto es un clon de AirBnB desarrollado como parte del programa de Holberton School Uruguay. El objetivo de esta etapa es construir un sistema escalable que permita la gestión de usuarios, reseñas, lugares y amenities, utilizando una arquitectura bien definida y aplicando la lógica previamente realizada en la primera etapa.
 
 ## Estructura del Repositorio
 
@@ -27,8 +27,6 @@ El repositorio está organizado en los siguientes directorios y archivos princip
 
   - `v1/`: Versión 1 de la API con controladores específicos.
   - `app.py`: Punto de entrada de la API.
-
-- **web\_static/**: Contiene archivos HTML, CSS y JavaScript para la interfaz de usuario.
 
 - **README.md**: Este archivo de documentación con una visión general del proyecto.
 
@@ -65,5 +63,3 @@ El servidor se ejecutará por defecto en `http://127.0.0.1:5000/`.
 @BruDosSant
 @Rodrigoferrer
 @feratholberton
-
-Este proyecto está desarrollado como parte del currículo de Holberton School Uruguay.
