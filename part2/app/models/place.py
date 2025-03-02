@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Class Place"""
 
+import uuid
 from .base import BaseModel
 from .user import User
 
@@ -8,8 +9,10 @@ from .user import User
 class Place(BaseModel):
     """Class Place, inherits from BaseModel"""
 
-    def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: User, description=None, amenities=None, reviews=None):      
+    def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: User, description=None, amenities=None, reviews=None, place_id: str = None):
+        """Constructor method"""      
         BaseModel.__init__(self)
+        self.place_id = place_id or str(uuid.uuid4())
         self.title = title
         self.description = description
         self.price = price
