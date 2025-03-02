@@ -77,7 +77,8 @@ class HBnBFacade:
 
     def get_place(self, place_id):
         """consulta un lugar por ID."""
-        return self.place_repo.get(place_id)
+        place = self.place_repo.get(place_id)
+        return place
 
     def get_all_places(self):
         """Obtiene todos los lugares."""
