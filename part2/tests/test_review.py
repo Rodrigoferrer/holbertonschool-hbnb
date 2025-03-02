@@ -21,4 +21,5 @@ class TestUserEndpoints(unittest.TestCase):
             "last_name": "",
             "email": "invalid-email"
         })
+        print(response)
         self.assertEqual(response.status_code, 400)
