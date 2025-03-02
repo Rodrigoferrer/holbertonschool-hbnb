@@ -4,6 +4,7 @@
 
 import uuid
 from datetime import datetime
+from flask_swagger_ui import get_swaggerui_blueprint
 
 
 class BaseModel:
