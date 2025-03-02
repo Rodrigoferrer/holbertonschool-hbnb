@@ -54,7 +54,7 @@ class PlaceList(Resource):
         data['owner'] = owner
         n_place = facade.create_place(data)
         return {
-            'place_id': n_place.place_id,
+            'place_id': n_place.id,
             'title': n_place.title,
             'description': n_place.description,
             'price': n_place.price,
@@ -67,7 +67,7 @@ class PlaceList(Resource):
     def get(self):
         """Retrieve a list of all places"""
         places = facade.get_all_places()
-        return [{'title': p.title, 'description': p.description, 'price': p.price, 'latitude': p.latitude, 'longitude': p.longitude, 'owner_id': p.owner.id} for p in places], 200
+        return [{'id': p.id, 'title': p.title, 'latitude': p.latitude, 'longitude': p.longitude} for p in places], 200
 
 @api.route('/<place_id>')
 class PlaceResource(Resource):
@@ -87,8 +87,15 @@ class PlaceResource(Resource):
     def put(self, place_id):
         """Update a place's information"""
         data = api.payload
+        verify_place = facade.get_place(place_id)
+        
+        if not verify_place:
+            return {'error': 'place not found'}, 404
+
         updated_place = facade.update_place(place_id, data)
+        
         if not updated_place:
-            return {'error': 'Place not found'}, 404
-        return {'title': updated_place.title, 'description': updated_place.description, 'price': updated_place.price, 'latitude': updated_place.latitude, 'longitude': updated_place.longitude}, 200
+            return {'error': 'Input not valid'}, 400
+        
+        return {'message': 'Place updated successfully'}, 200
     
