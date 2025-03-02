@@ -34,6 +34,8 @@ El repositorio está organizado en los siguientes directorios y archivos princip
 
 A continuación, se presenta un diagrama de flujo que ilustra el funcionamiento general del sistema:
 
+![image](https://github.com/user-attachments/assets/ff6c19cb-88f8-4e94-b66a-6af4a462ae4c)
+
 ## Instalación y Configuración
 
 ### Prerrequisitos
