@@ -53,8 +53,15 @@ class PlaceList(Resource):
         data.pop('owner_id')
         data['owner'] = owner
         n_place = facade.create_place(data)
-        return {'title': n_place.title, 'description': n_place.description, 'price': n_place.price, 'latitude': n_place.latitude, 'longitude': n_place.longitude, 'owner_id': owner.id}, 201
-            
+        return {
+            'place_id': n_place.place_id,
+            'title': n_place.title,
+            'description': n_place.description,
+            'price': n_place.price,
+            'latitude': n_place.latitude,
+            'longitude': n_place.longitude,
+            'owner_id': owner.id
+        }, 201            
 
     @api.response(200, 'List of places retrieved successfully')
     def get(self):

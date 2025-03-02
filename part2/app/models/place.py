@@ -9,7 +9,7 @@ from .user import User
 class Place(BaseModel):
     """Class Place, inherits from BaseModel"""
 
-    def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: User, description=None, amenities=None, reviews=None, place_id: str = None):
+    def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: User, description=None, amenities=None, reviews=None, place_id=None):
         """Constructor method"""      
         BaseModel.__init__(self)
         self.place_id = place_id or str(uuid.uuid4())
