@@ -69,27 +69,23 @@ class HBnBFacade:
 
 
     def create_place(self, place_data):
-        # Placeholder for logic to create a place, including validation for price, latitude, and longitude
+        """Crea un nuevo lugar."""
         place = Place(**place_data)
         self.place_repo.add(place)
         return place
 
     def get_place(self, place_id):
-        # Placeholder for logic to retrieve a place by ID, including associated owner and amenities
+        """consulta un lugar por ID."""
         return self.place_repo.get(place_id)
 
     def get_all_places(self):
-        # Placeholder for logic to retrieve all places
-        pass
+        """Obtiene todos los lugares."""
+        return self.place_repo.get_all()
 
     def update_place(self, place_id, place_data):
-        # Placeholder for logic to update a place
-        pass
-
-    # Placeholder method for fetching a place by ID
-    def get_place(self, place_id):
-        # Logic will be implemented in later tasks
-        pass
+        """actualiza un lugar existente."""
+        updated_place = self.place_repo.update(place_id, place_data)
+        return updated_place
 
     def create_review(self, review_data):
         # Placeholder for logic to create a review, including validation for user_id, place_id, and rating
