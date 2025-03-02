@@ -30,6 +30,10 @@ El repositorio está organizado en los siguientes directorios y archivos princip
 
 - **README.md**: Este archivo de documentación con una visión general del proyecto.
 
+## Diagrama de Flujo
+
+A continuación, se presenta un diagrama de flujo que ilustra el funcionamiento general del sistema:
+
 ## Instalación y Configuración
 
 ### Prerrequisitos
