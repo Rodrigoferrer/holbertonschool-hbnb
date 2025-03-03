@@ -72,7 +72,7 @@ pip install -r requirements.txt
 Para iniciar la API, ejecuta el siguiente comando:
 
 ```bash
-python3 api/app.py
+python3 run.py
 ```
 
 El servidor se ejecutará por defecto en `http://127.0.0.1:5000/`.
