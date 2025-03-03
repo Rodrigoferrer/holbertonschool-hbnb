@@ -9,7 +9,7 @@ from .user import User
 class Place(BaseModel):
     """Class Place, inherits from BaseModel"""
 
-    def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: User, description=None, amenities=None, reviews=None):
+    def __init__(self, title: str, price: float, latitude: float, longitude: float, owner: User, description=None, amenities=None, reviews=None, place_id=None):
         """Constructor method"""      
         super().__init__()
         self.title = title
@@ -37,8 +37,10 @@ class Place(BaseModel):
     
     @description.setter
     def description(self, value):
+        if  value is None or len(value) == 0:
+            raise ValueError("Description cannot be empty")
         if len(value) > 100:
-            raise ValueError("Description cannot exceed 100 characters")
+            raise ValueError("Description cannot exceed 100 caracters")
         self._description = value
 
     @property
@@ -47,7 +49,7 @@ class Place(BaseModel):
     
     @price.setter
     def price(self, value):
-        if value < 0:
+        if value is None or value < 0:
             raise ValueError("Price must be a positive number")
         self._price = value
 
@@ -57,7 +59,7 @@ class Place(BaseModel):
     
     @latitude.setter
     def latitude(self, value):
-        if value < -90.0 or value > 90.0:
+        if value is None or value < -90.0 or value > 90.0:
             raise ValueError("Must be within the range of -90.0 to 90.0.")
         self._latitude = value
 
@@ -67,7 +69,7 @@ class Place(BaseModel):
     
     @longitude.setter
     def longitude(self, value):  
-        if value < -180.0 or value > 180.0:
+        if value is None or value < -180.0 or value > 180.0:
             raise ValueError("Must be within the range of -180.0 to 180.0.")
         self._longitude = value
 

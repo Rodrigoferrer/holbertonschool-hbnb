@@ -22,7 +22,7 @@ class Review(BaseModel):
 
     @property
     def Text(self):
-        return self.text
+        return self._text
     @Text.setter
     def validate_text(self, text):
         """Valida que el texto no esté vacío."""
@@ -32,7 +32,7 @@ class Review(BaseModel):
 
     @property
     def Rating(self):
-        return self.rating
+        return self._rating
     @Rating.setter
     def validate_rating(self, rating):
         """Valida que la calificación esté entre 1 y 5."""
@@ -42,7 +42,7 @@ class Review(BaseModel):
 
     @property
     def Place(self):
-        return self.place
+        return self._place
     @Place.setter
     def validate_place(self, place):
         """Valida que la reseña esté asociada a un lugar válido."""
@@ -52,7 +52,7 @@ class Review(BaseModel):
 
     @property
     def User(self):
-        return self.user
+        return self._user
     @User.setter
     def validate_user(self, user):
         """Valida que la reseña tenga un usuario válido."""
