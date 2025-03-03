@@ -8,13 +8,20 @@ Este proyecto es un clon de AirBnB desarrollado como parte del programa de Holbe
 
 El repositorio está organizado en los siguientes directorios y archivos principales:
 
-- **models/**: Contiene la lógica del modelo de datos y las clases que representan las entidades del sistema.
+- **app/**: Dierctorio que contiene todo el programa.
 
-  - `base_model.py`: Clase base que define atributos y métodos comunes.
-  - `user.py`: Modelo de usuario.
-  - `place.py`: Modelo de lugar.
-  - `review.py`: Modelo de reseña.
-  - `amenity.py`: Modelo de amenidades.
+  - **models/**: Contiene la lógica del modelo de datos y las clases que representan las entidades del sistema.
+
+    - `base_model.py`: Clase base que define atributos y métodos comunes.
+    - `user.py`: Modelo de usuario.
+    - `place.py`: Modelo de lugar.
+    - `review.py`: Modelo de reseña.
+    - `amenity.py`: Modelo de amenidades.
+
+  - **api/**: Implementación de la API RESTful para interactuar con el sistema.
+
+    - `v1/`: Versión 1 de la API con controladores específicos.
+    - `app.py`: Punto de entrada de la API.
 
 - **tests/**: Contiene los casos de prueba automatizados para validar la funcionalidad del sistema.
 
@@ -22,11 +29,6 @@ El repositorio está organizado en los siguientes directorios y archivos princip
   - `test_user.py`: data validation para endpoints de clase user
   - `test_place.py`: data validation para endpoints de clase place
   - `test_amenities.py`: data validation para endpoints de clase amenities
-
-- **api/**: Implementación de la API RESTful para interactuar con el sistema.
-
-  - `v1/`: Versión 1 de la API con controladores específicos.
-  - `app.py`: Punto de entrada de la API.
 
 - **README.md**: Este archivo de documentación con una visión general del proyecto.
 
