@@ -1,84 +1,84 @@
 # HolbertonBnB Part2
 
-## Descripción del Proyecto
+## Project Description
 
-Este proyecto es un clon de AirBnB desarrollado como parte del programa de Holberton School Uruguay. El objetivo de esta etapa es construir un sistema escalable que permita la gestión de usuarios, reseñas, lugares y amenities, utilizando una arquitectura bien definida y aplicando la lógica previamente realizada en la primera etapa.
+This project is a clone of AirBnB developed as part of the Holberton School Uruguay program. The goal of this phase is to build a scalable system that allows the management of users, reviews, places, and amenities, using a well-defined architecture and applying the logic previously implemented in the first phase.
 
-## Estructura del Repositorio
+## Repository Structure
 
-El repositorio está organizado en los siguientes directorios y archivos principales:
+The repository is organized into the following main directories and files:
 
-- **app/**: Dierctorio que contiene todo el programa.
+- **app/**: Directory containing the entire program.
 
-  - **models/**: Contiene la lógica del modelo de datos y las clases que representan las entidades del sistema.
+  - **models/**: Contains the data model logic and classes representing the system's entities.
 
-    - `base_model.py`: Clase base que define atributos y métodos comunes.
-    - `user.py`: Modelo de usuario.
-    - `place.py`: Modelo de lugar.
-    - `review.py`: Modelo de reseña.
-    - `amenity.py`: Modelo de amenidades.
+    - `base_model.py`: Base class defining common attributes and methods.
+    - `user.py`: User model.
+    - `place.py`: Place model.
+    - `review.py`: Review model.
+    - `amenity.py`: Amenities model.
 
-  - **api/**: Implementación de la API RESTful para interactuar con el sistema.
+  - **api/**: Implementation of the RESTful API to interact with the system.
 
-    - `v1/`: Versión 1 de la API con controladores específicos.
-    - `app.py`: Punto de entrada de la API.
+    - `v1/`: Version 1 of the API with specific controllers.
+    - `app.py`: API entry point.
 
-  - **services/**: Implements the Facade pattern, simplifying interactions betweendifferent layers of the application
-    - `facade.py`: Implements the Facade pattern, simplifying interaction between different layers of the application
+  - **services/**: Implements the Facade pattern, simplifying interactions between different layers of the application.
+    - `facade.py`: Implements the Facade pattern, simplifying interaction between different layers of the application.
 
-  - **persistence/**: Manages data storage and database interactions
-    - `repository.py`: Defines the repository pattern for managing and storing data, like users, places, reviews, etc
+  - **persistence/**: Manages data storage and database interactions.
+    - `repository.py`: Defines the repository pattern for managing and storing data, such as users, places, reviews, etc.
 
-- **tests/**: Contiene los casos de prueba automatizados para validar la funcionalidad del sistema.
+- **tests/**: Contains automated test cases to validate system functionality.
 
-  - `test_review.py`: data validation para endpoints de clase review
-  - `test_user.py`: data validation para endpoints de clase user
-  - `test_place.py`: data validation para endpoints de clase place
-  - `test_amenities.py`: data validation para endpoints de clase amenities
+  - `test_review.py`: Data validation for review class endpoints.
+  - `test_user.py`: Data validation for user class endpoints.
+  - `test_place.py`: Data validation for place class endpoints.
+  - `test_amenities.py`: Data validation for amenities class endpoints.
 
-- **README.md**: Este archivo de documentación con una visión general del proyecto.
+- **README.md**: This documentation file provides an overview of the project.
 
-- **config.py**: Este archivo define las variables de entorno local.
+- **config.py**: Defines local environment variables.
 
-- **run.py**: Es un script en Python que se utiliza para iniciar una aplicación web.
+- **run.py**: A Python script used to start a web application.
 
+## Flow Diagram
 
-## Diagrama de Flujo
-
-A continuación, se presenta un diagrama de flujo que ilustra el funcionamiento general del sistema:
+The following flow diagram illustrates the general functioning of the system:
 
 ![image](https://github.com/user-attachments/assets/ff6c19cb-88f8-4e94-b66a-6af4a462ae4c)
 
-## Instalación y Configuración
+## Installation and Configuration
 
-### Prerrequisitos
+### Prerequisites
 
-Para ejecutar este proyecto, necesitarás tener instalado:
+To run this project, you will need to have installed:
 
 - Python 3
 - Flask
-- pip (administrador de paquetes de Python)
+- pip (Python package manager)
 
-### Instalación de Dependencias
+### Installing Dependencies
 
-Ejecuta el siguiente comando en la raíz del proyecto para instalar las dependencias necesarias:
+Run the following command at the root of the project to install the necessary dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Cómo Ejecutar la Aplicación
+### How to Run the Application
 
-Para iniciar la API, ejecuta el siguiente comando:
+To start the API, run the following command:
 
 ```bash
 python3 run.py
 ```
 
-El servidor se ejecutará por defecto en `http://127.0.0.1:5000/`.
+The server will run by default at `http://127.0.0.1:5000/`.
 
 ## Authors
 
 [@BruDosSant](https://github.com/BruDosSant)  
 [@Rodrigoferrer](https://github.com/Rodrigoferrer)  
 [@feratholberton](https://github.com/feratholberton)
+
