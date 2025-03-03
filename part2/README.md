@@ -23,6 +23,12 @@ El repositorio está organizado en los siguientes directorios y archivos princip
     - `v1/`: Versión 1 de la API con controladores específicos.
     - `app.py`: Punto de entrada de la API.
 
+  - **services/**: Implements the Facade pattern, simplifying interactions betweendifferent layers of the application
+    - `facade.py`: Implements the Facade pattern, simplifying interaction between different layers of the application
+
+  - **persistence/**: Manages data storage and database interactions
+    - `repository.py`: Defines the repository pattern for managing and storing data, like users, places, reviews, etc
+
 - **tests/**: Contiene los casos de prueba automatizados para validar la funcionalidad del sistema.
 
   - `test_review.py`: data validation para endpoints de clase review
@@ -34,7 +40,7 @@ El repositorio está organizado en los siguientes directorios y archivos princip
 
 - **config.py**: Este archivo define las variables de entorno local.
 
-- **run.py**: Contiene,
+- **run.py**: Es un script en Python que se utiliza para iniciar una aplicación web.
 
 
 ## Diagrama de Flujo
