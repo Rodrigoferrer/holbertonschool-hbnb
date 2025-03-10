@@ -1,0 +1,6 @@
+part2/venv/
+__pycache__/
+part2/app/__pycache__/*
+part2/app/api/v1/__pycache__/*
+part2/app/models/__pycache__/*
+part2/app/services/__pycache__/*
